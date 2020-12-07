@@ -16,7 +16,8 @@ static void FirstWay()
     var passports =
         File.ReadAllText("../../../input.txt")
             .Split("\r\n\r\n")
-            .Select(p => p.Replace("\n", "").Replace("\r", " "))
+            .Select(p => p.Replace("\n", "")
+                                .Replace("\r", " "))
             .Select(line => line.Split(" ")).ToArray();
 
     foreach (var passport in passports)
